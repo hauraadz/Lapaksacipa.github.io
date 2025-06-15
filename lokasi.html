@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title></title>
+  <link rel="stylesheet" href="css/lokasi.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul class="nav-list">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="produk.html">Produk</a></li>
+        <li><a href="lokasi.html">Lokasi</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+        <li><a href="guestbook.php">Buku Tamu</a></li>
+        <li><a href="game.html">Game</a></li>
+      </ul>
+      <div class="logo">Lapak Sacipa</div>
+      <form action="produk.html" method="get" class="search-form">
+        <input type="text" name="q" id="searchInput" placeholder="Cari produk...">
+      </form>
+    </nav>
+  </header>
+
+<div id="sticky-panel" class="hidden">
+  <div class="sticky-content">
+    <h3>Alamat Lengkap</h3>
+    <div class="address-details">
+      <p><i class="fas fa-map-marker-alt"></i> Jl. Juragan Sinda IV</p>
+      <p><i class="fas fa-building"></i> Kukusan, Kecamatan Beji</p>
+      <p><i class="fas fa-city"></i> Kota Depok, Jawa Barat</p>
+      <p><i class="fas fa-mail-bulk"></i> 16425</p>
+    </div>
+    <div class="address-details">
+      <p><i class="fas fa-clock"></i> Jam Operasional:</p>
+      <p>Senin - Minggu: 08:00 - 20:00 WIB</p>
+    </div>
+  </div>
+</div>
+
+<div class="location-info" style="height: 1px; opacity: 0;"></div>
+
+<div class="full-banner">
+  <img src="images/toko depan.jpg" alt="Foto Lokasi Toko" />
+  <div class="banner-text"></div>
+</div>
+
+ <div class="scroll-section">
+  <div class="motor-road-wrapper">
+    <img src="images/motor.png" id="motor" class="motor" alt="Motor">
+    <div class="road">
+      <p class="alamat"> LOKASI KAMI: DI JL. JURAGAN SINDA IV No.11 KUKUSAN , KECAMATAN BEJI, KOTA DEPOK, JAWA BARAT 16425 </p>
+    </div>
+  </div>
+</div>
+
+<div class="map-container" data-aos="zoom-in" data-aos-duration="1000">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d495.65902269156174!2d106.818132841765!3d-6.358805921520774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69eda5a1eec97b%3A0xfdae16f0b3c78470!2sLapak%20SaCiPa!5e0!3m2!1sid!2sid!4v1747730616071!5m2!1sid!2sid"
+    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+  ></iframe>
+</div>
+
+<section class="direction-guide" data-aos="fade-up" data-aos-duration="1000">
+  <h2>Cara Menuju ke Lapak Sacipa</h2>
+  <div class="direction-cards">
+    <div class="card">
+      <h3>🚉 Dari Stasiun UI / Pondok Cina</h3>
+      <p>Naik ojek online atau angkot ke arah Kukusan. Lokasi bisa dicari dengan nama "Lapak Sacipa".</p>
+    </div>
+    <div class="card">
+      <h3>🚗 Dengan Kendaraan Pribadi</h3>
+      <p>Arahkan GPS ke “Jl. Juragan Sinda IV, Kukusan”. Tersedia area parkir motor dan mobil kecil di depan toko.</p>
+    </div>
+    <div class="card">
+      <h3>📱 Ojek Online</h3>
+      <p>Buka aplikasi Gojek atau Grab, lalu ketik “Lapak Sacipa”. Kami terdaftar dan mudah ditemukan.</p>
+    </div>
+  </div>
+</section>
+
+  <div class="location-info" style="height: 1px; opacity: 0;"></div>
+
+  <div class="full-banner">
+    <img src="images/sacipabanner.jpg" alt="Foto Lokasi Toko" />
+    <div class="banner-text"></div>
+  </div>
+  <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Lapak Sacipa</h3>
+                <p>Menyediakan berbagai jenis makanan dan minuman berkualitas</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Hubungi Kami</h4>
+                <p><i class="fas fa-phone"></i> +62 817-6310-746</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:lapaksacipa@gmail.com">lapaksacipa@gmail.com</a></p>
+                <p><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/lapaksacipa/" target="_blank">@lapaksacipa</a></p>
+            </div>
+        </div>
+    </footer>
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
+<script>
+  window.addEventListener("scroll", function () {
+    const panel1 = document.getElementById("sticky-panel");
+    const lokasiInfo = document.querySelector(".location-info");
+    const mapContainer = document.querySelector(".map-container");
+
+    const lokasiTop = lokasiInfo.getBoundingClientRect().top;
+    const mapTop = mapContainer.getBoundingClientRect().top;
+
+    if (lokasiTop < 0 && mapTop > 400) {
+      panel1.classList.add("show");
+      panel1.classList.remove("hidden");
+    } else {
+      panel1.classList.remove("show");
+      panel1.classList.add("hidden");
+    }
+  });
+
+  const motor = document.getElementById('motor');
+
+window.addEventListener('scroll', () => {
+  const scrollMax = document.body.scrollHeight - window.innerHeight;
+  const scrollPos = window.scrollY;
+
+  const scrollPercent = scrollPos / scrollMax;
+
+  const maxLeft = window.innerWidth;
+  const motorWidth = motor.offsetWidth;
+  const travelDistance = maxLeft + motorWidth;
+
+  // Posisi horizontal (loop dari kiri ke kanan)
+  const loopedPosition = (scrollPercent * travelDistance) % travelDistance;
+  const motorLeft = loopedPosition - motorWidth;
+  motor.style.left = motorLeft + 'px';
+
+  // Posisi vertikal (efek naik-turun pakai sinus)
+  const waveAmplitude = 20; // tinggi gelombang
+  const baseTop = 0; // posisi dasar
+  const waveOffset = Math.sin(scrollPercent * Math.PI * 4) * waveAmplitude;
+  motor.style.top = baseTop + waveOffset + 'px';
+});
+</script>
+</body>
+</html>

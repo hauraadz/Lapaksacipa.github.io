@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk Kami</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/produk.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header>
+    <nav class="navbar">
+      <ul class="nav-list">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="produk.html">Produk</a></li>
+        <li><a href="lokasi.html">Lokasi</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+        <li><a href="guestbook.php">Buku Tamu</a></li>
+        <li><a href="game.html">Game</a></li>
+      </ul>
+      <div class="logo">Lapak Sacipa</div>
+      <input type="text" id="searchInput" placeholder="Cari produk...">
+    </nav>
+    </header>
+
+    <main class="gallery-container">
+        <h2 class="gallery-title">Galeri Produk</h2>
+        
+        <!-- Category Filters -->
+        <div class="category-filters">
+            <button class="filter-btn active" data-category="all">Semua</button>
+            <button class="filter-btn" data-category="minuman">Minuman</button>
+            <button class="filter-btn" data-category="frozen">Frozen Food</button>
+            <button class="filter-btn" data-category="kue">Aneka Kue</button>
+            <button class="filter-btn" data-category="gorengan">Gorengan</button>
+        </div>
+        <div class="gallery">
+            <!-- Minuman Section -->
+            <div class="gallery-item" data-category="minuman">
+                <div class="image-container">
+                    <img src="images/serjeh.jpg" alt="Serjeh" loading="lazy">
+                    <div class="overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Serjeh</h3>
+                    <p class="product-price">Rp 10.000</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="minuman">
+                <div class="image-container">
+                    <img src="images/jerukperas.jpg" alt="Jeruk Peras" loading="lazy">
+                    <div class="overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Jeruk Peras</h3>
+                    <p class="product-price">Rp 10.000</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="minuman">
+                <div class="image-container">
+                    <img src="images/jussirsak.jpg" alt="Jus Sirsak" loading="lazy">
+                    <div class="overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Jus Sirsak</h3>
+                    <p class="product-price">Rp 10.000</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="minuman">
+                <div class="image-container">
+                    <img src="images/jusmanggakweni.jpg" alt="Jus Mangga Kweni" loading="lazy">
+                    <div class="overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Jus Mangga Kweni</h3>
+                    <p class="product-price">Rp 10.000</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="minuman">
+                <div class="image-container">
+                    <img src="images/jusstroberi.jpg" alt="Jus Stroberi" loading="lazy">
+                    <div class="overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Jus Stroberi</h3>
+                    <p class="product-price">Rp 10.000</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="minuman">
+                <div class="image-container">
+                    <img src="images/esteler.jpg" alt="Es Teler" loading="lazy">
+                    <div class="overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Es teler</h3>
+                    <p class="product-price">Rp 15.000</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="minuman">
+                <div class="image-container">
+                    <img src="images/eskuwut.jpg" alt="Es Kuwut" loading="lazy">
+                    <div class="overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Es Kuwut</h3>
+                    <p class="product-price">Rp 7.000</p>
+                </div>
+            </div>
+
+            <!-- Frozen Food Section -->
+            <div class="gallery-item" data-category="frozen">
+                <div class="image-container">
+                    <img src="images/risolespedas.jpg" alt="Risoles Pedas" loading="lazy">
+                    <div class="overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Risoles Pedas</h3>
+                    <p class="product-price">Rp 18.000</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="frozen">
+                <div class="image-container">
+                    <img src="images/rogutayam.jpg" alt="Rogut Ayam" loading="lazy">
+                    <div class="overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Rogut Ayam</h3>
+                    <p class="product-price">Rp 18.000</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="frozen">
+                <div class="image-container">
+                    <img src="images/kroketkentang.jpg" alt="Kroket Kentang" loading="lazy">
+                    <div class="overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Kroket Kentang</h3>
+                    <p class="product-price">Rp 18.000</p>
+                </div>
+            </div>
+
+            <!-- Aneka Kue Section -->
+            <div class="gallery-item" data-category="kue">
+                <div class="image-container">
+                    <img src="images/brownieskukus.jpg" alt="Brownies Kukus" loading="lazy">
+                    <div class="overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Brownies Kukus</h3>
+                    <p class="product-price">Rp 40.000</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="kue">
+                <div class="image-container">
+                    <img src="images/boluketan.jpg" alt="Bolu Ketan" loading="lazy">
+                    <div class="overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Bolu Ketan</h3>
+                    <p class="product-price">Rp 40.000</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="kue">
+                <div class="image-container">
+                    <img src="images/muffin.jpg" alt="Muffin" loading="lazy">
+                    <div class="overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Muffin</h3>
+                    <p class="product-price">Rp 50.000</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="kue">
+                <div class="image-container">
+                    <img src="images/muffintape.jpg" alt="Muffin Tape" loading="lazy">
+                    <div class="overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Muffin Tape</h3>
+                    <p class="product-price">Rp 40.000</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="kue">
+                <div class="image-container">
+                    <img src="images/lumpurkentang.jpg" alt="Lumpur Kentang" loading="lazy">
+                    <div class="overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Lumpur Kentang</h3>
+                    <p class="product-price">Rp 3.000</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="kue">
+                <div class="image-container">
+                    <img src="images/jagungkeju.jpg" alt="Jagung Keju" loading="lazy">
+                    <div class="overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Jagung Keju</h3>
+                    <p class="product-price">Rp 3.000</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="kue">
+                <div class="image-container">
+                    <img src="images/talamberas.jpg" alt="Talam Beras" loading="lazy">
+                    <div class="overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Talam Beras</h3>
+                    <p class="product-price">Rp 3.000</p>
+                </div>
+            </div>
+
+            <!-- Aneka Gorengan Section -->
+            <div class="gallery-item" data-category="gorengan">
+                <div class="image-container">
+                    <img src="images/sosissolo.jpg" alt="Sosis Solo" loading="lazy">
+                    <div class="overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Sosis Solo</h3>
+                    <p class="product-price">Rp 36.000</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="gorengan">
+                <div class="image-container">
+                    <img src="images/risolmayo.jpg" alt="Risol Mayo" loading="lazy">
+                    <div class="overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Risol Mayo</h3>
+                    <p class="product-price">Rp 18.000</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="gorengan">
+                <div class="image-container">
+                    <img src="images/pastel.jpg" alt="Pastel" loading="lazy">
+                    <div class="overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Pastel</h3>
+                    <p class="product-price">Rp 18.000</p>
+                </div>
+            </div>
+        </div>
+        <div id="lightbox" class="lightbox">
+            <span class="close-btn">&times;</span>
+            <img id="lightbox-img" class="lightbox-content">
+            <div class="lightbox-caption"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Lapak Sacipa</h3>
+                <p>Menyediakan berbagai jenis makanan dan minuman berkualitas</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Hubungi Kami</h4>
+                <p><i class="fas fa-phone"></i> +62 817-6310-746</p>
+                <p><i class="fas fa-envelope"></i> lapaksacipa.com</p>
+                <p><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/lapaksacipa/" target="_blank">@lapaksacipa</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/produk.js"></script>
+    
+    <a href="https://wa.me/628176310746?text=Halo%20Lapak%20Sacipa,%20saya%20mau%20order%20produk." 
+    class="whatsapp-float" 
+    target="_blank" 
+    aria-label="Pesan via WhatsApp">
+    <i class="fab fa-whatsapp whatsapp-icon"></i>
+    <span class="whatsapp-text">Order via WhatsApp</span>
+    </a>
+
+</body>
+</html>

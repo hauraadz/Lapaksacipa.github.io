@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tic Tac Toe Lapak Sacipa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+    overflow-y: scroll;
+    }
+
+     /* style navbar */
+    :root {
+      --primary: #ff6b6b;
+      --primary-dark: #d94a4a;
+      --secondary: #6b4c28;
+      --light-bg: #fff8f0;
+      --highlight-bg: #fffbe6;
+      --text-dark: #333;
+      --white: #ffffff;
+      --cell-size: 100px; /* untuk board game */
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-dark);
+      padding-top: 70px; /* space untuk navbar */
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* navbar */
+    .navbar {
+    background-color: var(--white);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    }
+
+    .nav-list {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    }
+
+    .nav-list li a {
+    text-decoration: none;
+    color: var(--primary); /* biar kontras di atas gambar */
+    font-size: 1.1rem; 
+    font-weight: 600;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); 
+    transition: color 0.3s ease;
+    }
+
+    .nav-list li a:hover {
+    color: #ffd700;
+    }
+
+    .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* search */
+.search-form {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+}
+
+.search-form input {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  max-width: 180px;
+}
+
+.search-form input {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: var(--white);
+  outline: none;
+  box-shadow: none;
+}
+
+form {
+  margin: 2rem 0;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+    /* halaman tik tak toe */
+
+    h1 {
+      margin-top: 20px;
+      color: #444;
+    }
+
+    .game-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, var(--cell-size));
+      grid-template-rows: repeat(3, var(--cell-size));
+      gap: 5px;
+      margin-bottom: 20px;
+    }
+
+    .cell {
+      width: var(--cell-size);
+      height: var(--cell-size);
+      background: white;
+      border: 2px solid var(--primary);
+      font-size: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .cell.winner {
+      background: var(--primary);
+      color: white;
+    }
+
+    .controls, .scoreboard {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+      align-items: center;
+    }
+
+    select, button {
+      padding: 8px 12px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .symbol-options {
+      margin: 10px 0;
+    }
+
+    .symbol-options button {
+      font-size: 2rem;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      :root {
+        --cell-size: 80px;
+      }
+      #searchInput {
+        width: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <ul class="nav-list">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="produk.html">Produk</a></li>
+        <li><a href="lokasi.html">Lokasi</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+        <li><a href="guestbook.php">Buku Tamu</a></li>
+        <li><a href="game.html">Game</a></li>
+      </ul>
+      <div class="logo">Lapak Sacipa</div>
+      <form action="produk.html" method="get" class="search-form">
+        <input type="text" name="q" id="searchInput" placeholder="Cari produk...">
+      </form>
+    </nav>
+  </header>
+
+  <h1>Tic Tac Toe Lapak Sacipa</h1>
+
+  <div class="game-container">
+    <div class="controls">
+      <label for="mode">Mode:</label>
+      <select id="mode">
+        <option value="2p">2 Pemain</option>
+        <option value="ai">Lawan AI</option>
+      </select>
+      <button id="reset">Reset</button>
+    </div>
+
+    <div class="scoreboard">
+      <span id="score-x">🧑: 0</span>
+      <span id="score-o">🤖: 0</span>
+    </div>
+
+    <div id="status">Giliran: X</div>
+    <div class="board" id="board"></div>
+  </div>
+
+  <!-- Modal pemilihan simbol -->
+  <div class="modal" id="symbol-select">
+    <div class="modal-content">
+      <h2>Pilih Simbol Pemain</h2>
+      <div class="symbol-options" data-player="1">
+        <p>Pemain 1:</p>
+        <button>❌</button><button>🍕</button><button>🐱</button><button>🚀</button>
+      </div>
+      <div class="symbol-options" data-player="2">
+        <p>Pemain 2 / AI:</p>
+        <button>⭕</button><button>🍔</button><button>🐶</button><button>🛸</button>
+      </div>
+      <button id="start-game">Mulai</button>
+    </div>
+  </div>
+
+  <script>
+    const board = document.getElementById("board");
+    const status = document.getElementById("status");
+    const resetBtn = document.getElementById("reset");
+    const scoreXEl = document.getElementById("score-x");
+    const scoreOEl = document.getElementById("score-o");
+    const modeSelect = document.getElementById("mode");
+
+    let currentPlayer = "X";
+    let boardState = Array(9).fill("");
+    let isGameOver = false;
+    let mode = "2p";
+    let winningCells = [];
+    let scoreX = 0;
+    let scoreO = 0;
+    let playerSymbols = { 1: "X", 2: "O" };
+
+    function renderBoard() {
+      board.innerHTML = "";
+      boardState.forEach((cell, index) => {
+        const cellEl = document.createElement("div");
+        cellEl.className = "cell";
+        if (winningCells.includes(index)) {
+          cellEl.classList.add("winner");
+        }
+        cellEl.dataset.index = index;
+        cellEl.textContent = cell === "X" ? playerSymbols[1] : (cell === "O" ? playerSymbols[2] : "");
+        board.appendChild(cellEl);
+      });
+    }
+
+    function updateStatus() {
+      status.textContent = isGameOver ? "Game Selesai" : `Giliran: ${currentPlayer === "X" ? playerSymbols[1] : playerSymbols[2]}`;
+    }
+
+    function checkWinner() {
+      const winCombos = [
+        [0,1,2],[3,4,5],[6,7,8],
+        [0,3,6],[1,4,7],[2,5,8],
+        [0,4,8],[2,4,6]
+      ];
+      for (const combo of winCombos) {
+        const [a,b,c] = combo;
+        if (boardState[a] && boardState[a] === boardState[b] && boardState[b] === boardState[c]) {
+          winningCells = combo;
+          return boardState[a];
+        }
+      }
+      if (!boardState.includes("")) {
+        return "draw";
+      }
+      return null;
+    }
+
+    function aiMove() {
+      // AI sederhana: ambil sel kosong pertama
+      for (let i = 0; i < 9; i++) {
+        if (boardState[i] === "") {
+          boardState[i] = "O";
+          return;
+        }
+      }
+    }
+
+    board.addEventListener("click", e => {
+      if (isGameOver) return;
+      if (!e.target.classList.contains("cell")) return;
+      const idx = +e.target.dataset.index;
+      if (boardState[idx] !== "") return;
+
+      if (mode === "2p") {
+        boardState[idx] = currentPlayer;
+        const winner = checkWinner();
+        if (winner) {
+          isGameOver = true;
+          if (winner === "X") scoreX++;
+          else if (winner === "O") scoreO++;
+          renderBoard();
+          updateStatus();
+          confetti();
+          alert(winner === "draw" ? "Seri!" : `Pemain ${winner} menang!`);
+          return;
+        }
+        currentPlayer = currentPlayer === "X" ? "O" : "X";
+      } else if (mode === "ai") {
+        if (currentPlayer === "X") {
+          boardState[idx] = "X";
+          const winner = checkWinner();
+          if (winner) {
+            isGameOver = true;
+            if (winner === "X") scoreX++;
+            else if (winner === "O") scoreO++;
+            renderBoard();
+            updateStatus();
+            confetti();
+            alert(winner === "draw" ? "Seri!" : `Pemain ${winner} menang!`);
+            return;
+          }
+          currentPlayer = "O";
+          aiMove();
+          const winner2 = checkWinner();
+          if (winner2) {
+            isGameOver = true;
+            if (winner2 === "X") scoreX++;
+            else if (winner2 === "O") scoreO++;
+            renderBoard();
+            updateStatus();
+            confetti();
+            alert(winner2 === "draw" ? "Seri!" : `Pemain ${winner2} menang!`);
+            return;
+          }
+          currentPlayer = "X";
+        }
+      }
+      renderBoard();
+      updateStatus();
+    });
+
+    resetBtn.addEventListener("click", () => {
+      boardState.fill("");
+      isGameOver = false;
+      winningCells = [];
+      currentPlayer = "X";
+      renderBoard();
+      updateStatus();
+    });
+
+    modeSelect.addEventListener("change", e => {
+      mode = e.target.value;
+      resetBtn.click();
+    });
+
+    // Modal pemilihan simbol
+    const symbolSelectModal = document.getElementById("symbol-select");
+    const symbolButtons = symbolSelectModal.querySelectorAll(".symbol-options button");
+    const startGameBtn = document.getElementById("start-game");
+    let chosenSymbols = { 1: "X", 2: "O" };
+
+    symbolButtons.forEach(btn => {
+      btn.addEventListener("click", e => {
+        const player = +e.target.closest(".symbol-options").dataset.player;
+        chosenSymbols[player] = e.target.textContent;
+        // Highlight selected button for player
+        e.target.parentElement.querySelectorAll("button").forEach(b => b.style.border = "");
+        e.target.style.border = "2px solid var(--primary)";
+      });
+    });
+
+    startGameBtn.addEventListener("click", () => {
+      if (chosenSymbols[1] === chosenSymbols[2]) {
+        alert("Simbol pemain 1 dan 2 tidak boleh sama!");
+        return;
+      }
+      playerSymbols = chosenSymbols;
+      symbolSelectModal.style.display = "none";
+      resetBtn.click();
+    });
+
+    // Tampilkan modal awal
+    window.onload = () => {
+      symbolSelectModal.style.display = "flex";
+      // Default highlight
+      symbolSelectModal.querySelector('.symbol-options[data-player="1"] button:nth-child(1)').style.border = "2px solid var(--primary)";
+      symbolSelectModal.querySelector('.symbol-options[data-player="2"] button:nth-child(1)').style.border = "2px solid var(--primary)";
+    };
+
+    // Konfeti ketika menang
+    function confetti() {
+      confettiLib = window.confetti || null;
+      if (confettiLib) {
+        confettiLib({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
+      }
+    }
+
+    renderBoard();
+    updateStatus();
+  </script>
+
+</body>
+</html>

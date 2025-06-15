@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lapak Sacipa</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <ul class="nav-list">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="produk.html">Produk</a></li>
+        <li><a href="lokasi.html">Lokasi</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+        <li><a href="guestbook.php">Buku Tamu</a></li>
+        <li><a href="game.html">Game</a></li>
+      </ul>
+      <div class="logo">Lapak Sacipa</div>
+      <form action="produk.html" method="get" class="search-form">
+        <input type="text" name="q" id="searchInput" placeholder="Cari produk...">
+      </form>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="slider">
+      <div class="slides">
+        <img src="images/risolmayo.jpg" alt="Slide 1" class="slide active">
+        <img src="images/sosissolo.jpg" alt="Slide 2" class="slide">
+        <img src="images/kroketkentang.jpg" alt="Slide 3" class="slide">
+      </div>
+      <div class="slider-controls">
+        <button id="prevBtn" class="nav-btn"><span class="tooltip">Prev</span>❮</button>
+        <button id="nextBtn" class="nav-btn"><span class="tooltip">Next</span>❯</button>
+      </div>
+      <a href="produk.html" class="discover-btn">DISCOVER MORE</a>
+    </div>
+  </section>
+  
+  <section class="bird-text-section">
+  <div class="bird-wrapper">
+    <img src="images/bird.png" alt="Burung Terbang" class="bird" />
+    <div class="text-running">
+      <p>Selamat datang di Lapak Sacipa! Di sini kamu bisa menikmati makanan lezat setiap hari.</p>
+    </div>
+  </div>
+  </section>
+
+  <div class="lapak-sacipa-text">
+    <h1>Nikmatnya Bukan Main!</h1>
+  <p>Setiap gigitan dari hidangan Lapak Sacipa dibuat dengan sepenuh hati—karena kami percaya, makanan enak bisa memperbaiki hari.</p>
+  </div>
+  
+  <section id="produk" class="section">
+    <h2>BEST SELLER</h2>
+    <div class="produk-list">
+      <div class="produk-card animate-on-scroll">
+  <img src="images/esteler.jpg" alt="ES TELER" />
+  <div class="overlay">
+    <h3>Es Teler</h3>
+    <p>Es teler segar dengan campuran alpukat, kelapa muda, dan nangka manis yang lumer di mulut, menyegarkan dahaga dan memanjakan lidahmu.</p>
+  </div>
+  </div>
+  <div class="produk-card animate-on-scroll">
+  <img src="images/serjeh.jpg" alt="Serjeh" />
+  <div class="overlay">
+    <h3>Serjeh</h3>
+    <p>Es sereh jeruk harum menyegarkan, paduan sereh wangi dan jeruk segar yang sejuk, bikin badan dan pikiran langsung fresh.</p>
+  </div>
+  </div>
+  <div class="produk-card animate-on-scroll">
+  <img src="images/boluketan.jpg" alt="Bolu Ketan" />
+  <div class="overlay">
+    <h3>Es Coklat Lava</h3>
+    <p>Bolu ketan lembut, cocok dimakan saat bersantai!</p>
+  </div>
+  </div>
+    </div>
+  </section>
+
+  <section class="juice">
+  <div class="container juice-content">
+    <div class="juice-image">
+      <img src="images/jusmanggakweni.jpg" alt="KESEGARAN DALAM SETIAP TEGUK" class="responsive">
+    </div>
+    <div class="juice-text">
+      <h2>KESEGARAN DALAM SETIAP TEGUK</h2>
+      <p>
+        Rasakan ledakan kesegaran alami dalam setiap tegukan jus kami. Dibuat dari buah pilihan dan diracik dengan penuh perhatian, setiap botol menghadirkan perpaduan rasa yang seimbang dan penuh energi—siap menyegarkan harimu dan memberi nutrisi bagi tubuhmu.
+      </p>
+      <p>
+        Mulai pagi dengan semangat atau nikmati jeda yang menenangkan—jus kami bukan sekadar minuman, tapi momen kesegaran yang bisa kamu bawa ke mana saja.
+        Nikmati sendiri atau bagikan pada yang tersayang—karena rasa bahagia itu terasa lebih segar saat alami.
+      </p>
+      <a href="produk.html" class="cta-button">DISCOVER JUICE</a>
+    </div>
+  </div>
+  </section>
+
+  <div class="shopee-order-box">
+  <img src="https://logos-world.net/wp-content/uploads/2023/01/Shopee-Logo-2015.png" alt="Shopee Logo" class="shopee-logo">
+  <p><strong>Yeyy! Sekarang Lapak Sacipa bisa diorder via Shopee~ 🛍️</strong></p>
+  <a href="https://shopee.co.id/susi_sacipa" target="_blank" class="shopee-button" style="margin-top: 16px;">Cek Toko di Shopee</a>
+  </div>
+  
+  <section class="ulasan">
+    <h2>Ulasan Pembeli</h2>
+    <div class="ulasan-container">
+      <div class="ulasan-kotak">
+        <p class="nama">Kirana Zeta</p>
+        <p class="bintang">★★★★★</p>
+        <p class="deskripsi">"ENAK BANGET SEMUA MAKANAN DAN MINUMAN NYA, es teler nya juga enak banget must try."</p>
+      </div>
+      <div class="ulasan-kotak">
+        <p class="nama">Nadira NR</p>
+        <p class="bintang">★★★★★</p>
+        <p class="deskripsi">"Menurut saya, serje sacipa seger, enak dan worth it to buy si + harganya terjangkau."</p>
+      </div>
+      <div class="ulasan-kotak">
+        <p class="nama">Dina Lestari</p>
+        <p class="bintang">★★★★★</p>
+        <p class="deskripsi">"Seger dan  nikmat....sehat buat semua usia....layak dikonsumsi utk minuman suplemen kesehatan."</p>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Lapak Sacipa</h3>
+                <p>Menyediakan berbagai jenis makanan dan minuman berkualitas</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Hubungi Kami</h4>
+                <p><i class="fas fa-phone"></i> +62 817-6310-746</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:lapaksacipa@gmail.com">lapaksacipa@gmail.com</a></p>
+                <p><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/lapaksacipa/" target="_blank">@lapaksacipa</a></p>
+            </div>
+        </div>
+  </footer>
+
+  <div id="popup-overlay">
+  <div id="popup-box">
+    <button class="close-btn" onclick="closePopup()">✖</button>
+    <img src="images/shopeelapaksacipa.png" alt="Shopee">
+    <p>Lapak Sacipa sekarang ada di Shopee juga! Yuk checkout~</p>
+    <a href="https://shopee.co.id/susi_sacipa" target="_blank" class="order-btn" style="margin-top: 16px;">
+      <button class="order-btn">Order di Shopee</button>
+    </a>
+  </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
